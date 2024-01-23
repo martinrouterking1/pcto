@@ -9,13 +9,13 @@ int main()
     int a;
     scanf("%d", &a);
     if (a<8) {
-    printf("Babbo Natale non esiste :D \n" );
+    printf("Babbo Natale non esiste, mi dispiace \n" );
     }
     else if (a<=18) {
-        printf("La maturità sta arrivando :D \n");
+        printf("Studia che la maturità sta arrivando \n");
     }
     else {
-        printf("Vai a lavorare :D \n");
+        printf("Vai a lavorare \n");
     }
     
   } 
