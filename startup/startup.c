@@ -34,22 +34,44 @@ void    registrazione(t_user *user, int *accreg)
     char password[20];
 
     sleep (1);
-    printf("\nBenvenuto nella pagina di registrazione alla piattaforma. Per creare un account inserisci\n");
+    printf("\nBenvenuto nella pagina di registrazione alla piattaforma. Per creare un account inserisci.\n");
     sleep (1);
     printf("\nUsername: ");
     scanf(" %s", &username);
     user->username = username;
-    printf("\nPassword: ");
+    printf("Password: ");
     scanf(" %s", &password);
     user->password = password;
     printf("\nStiamo generando il tuo codice personale che dovrai utilizzare per accedere al tuo bilancio.\nQuesto codice è unico e non va condiviso per garantire la massima sicurezza del servizio.");
     sleep (1);
-    printf("\nCodice generato: ");
+    printf("\n\nCodice generato: ");
     user->pinCode = genera_password(10);
-    printf("Ti ringraziamo per aver scelto Nexus");
+    printf("Ti ringraziamo per aver scelto Nexus.");
     *accreg = 2;
 }
 
+void logincomplete(t_user *user){
+    
+float bilancio;
+printf("La nostra start-up offre diverse possibilità di investimento sicuro.\nSeleziona la somma che sei disposto a collorare: ") ;
+printf("1. 50 - 100 €\n2. 101 - 500 €\n3. 501 - 1000 €\n4. 1001 - 2000 €\n5. 2001 - 5000 €");
+int scelta;
+scanf ("%d", scelta);
+printf("\nQual è la somma esatta che vuoi investire?\n");
+user->bilancio = bilancio;
+scanf("%s", bilancio);
+
+if (scelta == 1){
+    printf("\nEcco le possibilità di investimento create su misura per te.\nPremi il numero corrispondente all'azienda per ottenere più informazioni\n");
+    printf("1. \n2. \n");
+    int sceltaimpresa;
+    scanf("%d", sceltaimpresa);
+        if (sceltaimpresa == 1){
+            printf("\nLa ");
+        }
+}
+
+}
 void login (t_user *user){
     char username[20];
     char password[20];
@@ -60,14 +82,13 @@ void login (t_user *user){
     scanf(" %s", username);
     printf("Password: \n");
     scanf(" %s", password);
-    printf("asdasdasd---%s\n", user->username);
     if (strcmp(username, user->username) == 0 && strcmp(password, user->password)== 0 ){
-            printf("Benvenuto nel tuo spazio personale.\n");
+            printf("\nBenvenuto nel tuo spazio personale.\n");
             sleep (1);
-            printf("Inserisci il codice di sicurezza per accedere alla pagina di investimenti");
+            printf("Inserisci il codice di sicurezza per accedere alla pagina di investimenti: ");
             scanf(" %s", &pinCode);
                 if (strcmp(pinCode, user->pinCode) == 0){
-               
+                    logincomplete();
                 }
     }
     else  {
@@ -76,17 +97,7 @@ void login (t_user *user){
     }
 }
 
-void logincomplete(){
-    
-printf("La nostra start-up offre diverse possibilità di investimento sicuro.\nSeleziona la somma che sei disposto a collorare: ") ;
-printf("1. 50 - 100 €\n2. 101 - 500 €\n3. 501 - 1000 €\n4. 1001 - 2000 €\n5. 2001 - 5000 €");
-int scelta;
-scanf ("%d", scelta);
-if (scelta == 1){
-    printf("\nEcco le possibilità di investimento create su misura per te.\nPremi il numero corrispondente all'azienda per ottenere più informazioni\n");
-}
 
-}
 
 
 int main (){
