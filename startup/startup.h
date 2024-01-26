@@ -17,7 +17,7 @@ typedef struct s_user
     char    *username;
     char    *password;
     char    *pinCode;
-    float   *bilancio;
+    float   *saldo;
 }           t_user;
 
 typedef struct s_list
