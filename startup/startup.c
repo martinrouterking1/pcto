@@ -720,14 +720,7 @@ void login (t_user *user){
     scanf(" %s", &username);
     printf("Password: ");
     scanf(" %s", &password);
-    printf("UUUU-----%s--------%s---------UUUUUUU", username, password);
-
-
-    int d = strcmp(username, user->username);
-    printf("uuu %d", d);
-    int f = strcmp(password, user->password);
-    printf("uuu %d", f);
-    if (strcmp(username, user->username) == 1 && (strcmp(password, user->password))== 1 ){
+    if (strcmp(username, user->username) == 0 && (strcmp(password, user->password))== 0 ){
             printf("\n\nBenvenuto nel tuo spazio personale.\n");
             sleep (1);
             codicesicurezza:
